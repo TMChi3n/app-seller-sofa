@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.example.app_sofa_frontend.activity.CartActivity;
+import com.example.app_sofa_frontend.activity.LoginActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     private ImageView imgViewUser;
