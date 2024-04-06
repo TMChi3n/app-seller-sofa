@@ -26,4 +26,10 @@ public class Product {
     private String descriptions;
     private String img_url;
 
+    public Product(int id_sofa, String name_sofa, double price) {
+        this.id_sofa = id_sofa;
+        this.name_sofa = name_sofa;
+        this.price = price;
+    }
+
 }
