@@ -38,7 +38,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:paddingLeft="85dp"
-            android:text="Sản phẩm"
+            android:text="Furniture"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/back"
@@ -62,11 +62,11 @@
 
         <!-- Add views here -->
 
-        <ImageView
+        <TextView
             android:id="@+id/imageView3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:srcCompat="@drawable/ghe1" />
+            android:text="Image detail" />
 
     </LinearLayout>
 
@@ -78,22 +78,22 @@
         tools:layout_editor_absoluteY="339dp">
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/txt_name_product"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
-            android:text="Sofa Coastal"
+            android:text="Name product"
             android:textSize="24dp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/txt_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
             android:paddingTop="20dp"
-            android:text="12.720.000đ"
+            android:text="Price Product"
             android:textColor="@color/red"
             android:textSize="24dp"
             android:textStyle="bold" />
@@ -109,7 +109,7 @@
         android:paddingLeft="10dp">
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/textViewDescription"
             android:layout_width="139dp"
             android:layout_height="wrap_content"
             android:text="Mô tả"
@@ -117,36 +117,17 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/txt_description"
             android:layout_width="wrap_content"
             android:textSize="18dp"
             android:layout_height="wrap_content"
-            android:text="Chất liệu: Sản xuất bằng da bò Ý" />
+            android:text="text description" />
 
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="260dp"
-            android:layout_height="wrap_content"
-            android:text="Thời gian bảo hành: 5 năm"
-            android:textSize="18dp" />
 
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="258dp"
-            android:layout_height="wrap_content"
-            android:text="Hãng: ZSofa"
-            android:textSize="18dp" />
-
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="260dp"
-            android:layout_height="wrap_content"
-            android:text="Xuất xứ: Việt Nam"
-            android:textSize="18dp" />
     </LinearLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_Buy"
         android:layout_width="173dp"
         android:layout_height="49dp"
         android:layout_gravity="center_horizontal"

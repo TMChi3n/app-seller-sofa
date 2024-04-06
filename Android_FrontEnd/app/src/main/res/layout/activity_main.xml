@@ -20,9 +20,9 @@
             android:layout_width="109dp"
             android:layout_height="34dp"
             android:layout_marginStart="148dp"
-            android:text="Sofa"
+            android:text="Furniture"
             android:textAlignment="center"
-            android:textSize="30dp"
+            android:textSize="26dp"
             app:layout_constraintBottom_toTopOf="@id/search_cart_user"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -73,53 +73,176 @@
 
         </LinearLayout>
 
-        <!-- Introduce Section -->
-        <LinearLayout
-            android:id="@+id/introduce"
-            android:layout_width="410dp"
+        <!-- Image Introduce Section -->
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
             android:layout_height="137dp"
-            android:orientation="horizontal"
-            android:paddingTop="5dp"
-            app:layout_constraintBottom_toTopOf="@id/products"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/search_cart_user">
 
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="361dp"
-                android:layout_height="138dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ghe_sale" />
-        </LinearLayout>
+            <TextView
+                android:id="@+id/img_introduce"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Image Introduce" />
+        </FrameLayout>
 
         <!-- Products Section -->
         <LinearLayout
             android:id="@+id/products"
-            android:layout_width="407dp"
-            android:layout_height="479dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingTop="5dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/introduce">
+            app:layout_constraintTop_toBottomOf="@id/frameLayout">
 
-            <ImageView
-                android:id="@+id/imageView5"
+            <!-- Image 1 -->
+            <LinearLayout
+                android:id="@+id/img1Layout"
                 android:layout_width="match_parent"
-                android:layout_height="123dp"
-                android:layout_weight="1"
-                android:paddingTop="30dp"
-                app:srcCompat="@drawable/ghe1" />
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/imageView7"
+                <TextView
+                    android:id="@+id/img1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Image 1" />
+
+                <LinearLayout
+                    android:id="@+id/name_product_1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/name1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Name product 1" />
+
+                    <TextView
+                        android:id="@+id/price1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Price product 1" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Image 2 -->
+            <LinearLayout
+                android:id="@+id/img2Layout"
                 android:layout_width="match_parent"
-                android:layout_height="245dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ghe2" />
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/img2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Image 2" />
+
+                <LinearLayout
+                    android:id="@+id/name_product_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/name2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Name product 2" />
+
+                    <TextView
+                        android:id="@+id/price2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Price product 2" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Image 3 -->
+            <LinearLayout
+                android:id="@+id/img3Layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/img3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Image 3" />
+
+                <LinearLayout
+                    android:id="@+id/name_product_3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/name3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Name product 3" />
+
+                    <TextView
+                        android:id="@+id/price3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Price product 3" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Image 4 -->
+            <LinearLayout
+                android:id="@+id/img4Layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/img4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Image 4" />
+
+                <LinearLayout
+                    android:id="@+id/name_product_4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/name4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Name product 4" />
+
+                    <TextView
+                        android:id="@+id/price4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Price product 4" />
+
+                </LinearLayout>
+            </LinearLayout>
 
         </LinearLayout>
 
