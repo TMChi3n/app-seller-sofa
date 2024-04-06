@@ -44,4 +44,8 @@ public class ProductResponse {
     public void setImg_url(String img_url) {
         this.img_url = img_url;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 372d115d5cba1794995ebe97f17c3deff7620b28

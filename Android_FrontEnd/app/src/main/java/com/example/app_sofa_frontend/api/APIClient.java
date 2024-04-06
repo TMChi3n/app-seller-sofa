@@ -24,11 +24,19 @@ public class APIClient {
         if (instance == null) {
             instance = new APIClient();
         }
+<<<<<<< HEAD
         return instance;
+=======
+        return  instance;
+>>>>>>> 372d115d5cba1794995ebe97f17c3deff7620b28
     }
 
     public APIInterface getApi() {
         return retrofit.create(APIInterface.class);
     }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 372d115d5cba1794995ebe97f17c3deff7620b28
