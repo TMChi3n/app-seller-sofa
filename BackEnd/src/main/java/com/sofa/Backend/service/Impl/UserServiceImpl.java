@@ -22,8 +22,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDto login(String email, String password) {
-        User user = userRepository.findByEmail(email).orElse(null);
+    public UserDto login(String username, String password) {
+        User user = userRepository.findByUsername(username).orElse(null);
         if (user != null && user.getPassword().equals(password)) {
             return convertToDto(user);
         }

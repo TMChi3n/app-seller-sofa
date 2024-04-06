@@ -43,18 +43,18 @@ public class UserController {
 
     @PostMapping("/login")
     public ResponseEntity<?> loginUser(@RequestBody Map<String, String> requestBody) {
-        String email = requestBody.get("email");
+        String username = requestBody.get("username");
         String password = requestBody.get("password");
 
-        if (email == null || password == null) {
-            return new ResponseEntity<>("Email or password is missing", HttpStatus.BAD_REQUEST);
+        if (username == null || password == null) {
+            return new ResponseEntity<>("Username or password is missing", HttpStatus.BAD_REQUEST);
         }
 
-        UserDto loggedInUser = userService.login(email, password);
+        UserDto loggedInUser = userService.login(username, password);
         if (loggedInUser != null) {
             return new ResponseEntity<>(loggedInUser, HttpStatus.OK);
         } else {
-            return new ResponseEntity<>("Invalid email or password", HttpStatus.UNAUTHORIZED);
+            return new ResponseEntity<>("Invalid Username or password", HttpStatus.UNAUTHORIZED);
         }
     }
 }
