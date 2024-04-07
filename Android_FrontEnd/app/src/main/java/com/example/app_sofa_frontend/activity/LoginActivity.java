@@ -49,16 +49,16 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
                 // Call username and password in UserAccount
-//                UserAccount userAccount = new UserAccount();
-//                userAccount.setUsername(username);
-//                userAccount.setPassword(password);
+                UserAccount userAccount = new UserAccount();
+                userAccount.setUsername(username);
+                userAccount.setPassword(password);
 
                 // Call login API
-                Call<UserAccount> call = api_login.loginAccount(username, password);
+                Call<UserAccount> call = api_login.loginAccount(userAccount);
                 call.enqueue(new Callback<UserAccount>() {
                     @Override
                     public void onResponse(Call<UserAccount> call, Response<UserAccount> response) {
-                        if (response.isSuccessful()) {
+                        if (response.isSuccessful() && response.body() != null) {
                             // Login successful
                             String message = "Login successful!";
                             Toast.makeText(LoginActivity.this, message, Toast.LENGTH_SHORT).show();

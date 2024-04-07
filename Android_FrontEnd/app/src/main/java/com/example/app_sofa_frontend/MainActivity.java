@@ -108,28 +108,29 @@ public class MainActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     List<ProductResponse> products = response.body();
                     if (products != null && !products.isEmpty()) {
+                        productList.clear();
+                        productList.addAll(products);
+                        adapter.notifyDataSetChanged(); // Inform the adapter of the updated data
+
                         if (products.size() == 1) {
                             // Only one product found, navigate to its detail activity
                             displayProductDetail(products.get(0));
-                        } else {
-                            // Show search results in the RecyclerView
-                            adapter = new ProductAdapter(MainActivity.this, products);
-                            recyclerView.setAdapter(adapter);
                         }
                     } else {
                         // Handle case when no products are found
                         Toast.makeText(MainActivity.this, "No products found", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    // Handle unsuccessful response
-                    Toast.makeText(MainActivity.this, "Failed to search products", Toast.LENGTH_SHORT).show();
+                    // Handle an unsuccessful response
+                    Toast.makeText(MainActivity.this, "Search failed", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<List<ProductResponse>> call, Throwable t) {
-                Log.e("API Call", "Failed", t);
-                Toast.makeText(MainActivity.this, "Search Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                // Handle a network or other API call failure
+                Log.e("API Call", "Error during search", t);
+                Toast.makeText(MainActivity.this, "Search error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
