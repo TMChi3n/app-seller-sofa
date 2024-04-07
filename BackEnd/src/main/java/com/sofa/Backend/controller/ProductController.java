@@ -61,7 +61,7 @@ public class ProductController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    @GetMapping("/products/search")
+    @GetMapping("/product/search")
     public List<Product> searchProducts(@RequestParam String query) {
         return productService.findByQuery(query);
     }

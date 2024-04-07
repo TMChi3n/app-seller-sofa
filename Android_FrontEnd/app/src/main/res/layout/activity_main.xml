@@ -27,11 +27,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
+        <ImageView
             android:id="@+id/user"
             android:layout_width="67dp"
             android:layout_height="31dp"
-            android:text="Login"
+            android:src="@drawable/user_icon"
             android:paddingLeft="10dp"
             android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -49,8 +49,8 @@
             app:layout_constraintTop_toBottomOf="@id/textView">
 
             <!-- Search TextInputEditText -->
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editTextCart"
+            <EditText
+                android:id="@+id/search"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
