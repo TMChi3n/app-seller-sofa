@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sofa.Backend.dto.ProductDto;
+import com.sofa.Backend.model.Product;
 import com.sofa.Backend.service.ProductService;
 
 @RestController
@@ -57,6 +59,11 @@ public class ProductController {
     public ResponseEntity<Void> deleteTask(@PathVariable int id) {
         productService.deleteProductById(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @GetMapping("/products/search")
+    public List<Product> searchProducts(@RequestParam String query) {
+        return productService.findByQuery(query);
     }
 
 }

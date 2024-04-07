@@ -1,0 +1,22 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Bottom Shadow -->
+    <item>
+        <shape>
+            <solid android:color="@android:color/transparent" />
+            <stroke android:width="4dp" android:color="#33000000" /> <!-- Shadow color and width -->
+            <corners android:radius="5dp" />
+        </shape>
+    </item>
+
+    <!-- Main Shape -->
+    <item>
+        <shape>
+            <solid android:color="@android:color/transparent" />
+            <stroke
+                android:width="2dp"
+                android:color="#DDDDDD" />
+            <corners android:radius="5dp" />
+        </shape>
+    </item>
+</layer-list>

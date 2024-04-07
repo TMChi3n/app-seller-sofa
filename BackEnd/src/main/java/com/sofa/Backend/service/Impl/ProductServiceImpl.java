@@ -57,6 +57,11 @@ public class ProductServiceImpl implements ProductService {
         productRepository.deleteById(id);
     }
 
+    @Override
+    public List<Product> findByQuery(String query) {
+        return productRepository.findByQuery(query);
+    }
+
     private ProductDto convertToDto(Product product) {
         ProductDto productDto = new ProductDto();
         productDto.setId_sofa(product.getId_sofa());

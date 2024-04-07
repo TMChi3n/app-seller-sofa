@@ -1,13 +1,38 @@
 package com.example.app_sofa_frontend.api;
 
 import com.example.app_sofa_frontend.model.ProductResponse;
+import com.example.app_sofa_frontend.model.UserAccount;
+
+import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface APIInterface {
 
-    @GET("products")
-    Call<ProductResponse> getProduct();
+    @GET("/api/product")
+    Call<List<ProductResponse>> getAllProducts();
+
+    @GET("/api/product/{id}")
+    Call<ProductResponse> getProductById(@Path("id") int id);
+
+
+    @POST("/api/login")
+    Call<UserAccount> loginAccount(
+            @Field("username") String username,
+            @Field("password") String password
+    );
+
+    @POST("/api/register")
+    Call<UserAccount> registerAccount(
+            @Field("username") String username,
+            @Field("email") String email,
+            @Field("password") String password
+    );
 
 }
+

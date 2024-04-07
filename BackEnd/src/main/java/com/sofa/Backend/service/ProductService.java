@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.sofa.Backend.dto.ProductDto;
+import com.sofa.Backend.model.Product;
 
 @Service
 public interface ProductService {
@@ -18,5 +19,7 @@ public interface ProductService {
     ProductDto updateProduct(int id, ProductDto productDto);
 
     void deleteProductById(int id);
+
+    List<Product> findByQuery(String query);
 
 }

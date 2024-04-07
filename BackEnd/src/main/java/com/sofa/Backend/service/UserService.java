@@ -12,5 +12,6 @@ public interface UserService {
     UserDto login(String email, String password);
 
     boolean emailExists(String email);
+    
 
 }

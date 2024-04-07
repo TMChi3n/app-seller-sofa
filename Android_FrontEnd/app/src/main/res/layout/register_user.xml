@@ -8,7 +8,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="108dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -34,9 +36,11 @@
                 android:textAlignment="center"
                 android:textSize="30dp"
                 android:textStyle="bold" />
+
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/form_login"
             android:layout_width="match_parent"
             android:layout_height="291dp">
 
@@ -94,6 +98,15 @@
 
         </RelativeLayout>
 
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="150dp"
+            android:layout_height="62dp"
+            android:layout_gravity="center"
+            android:text="Đăng ký"
+            app:layout_constraintBottom_toTopOf="@id/login"
+            app:layout_constraintTop_toBottomOf="@id/form_login" />
 
         <TextView
             android:id="@+id/login"

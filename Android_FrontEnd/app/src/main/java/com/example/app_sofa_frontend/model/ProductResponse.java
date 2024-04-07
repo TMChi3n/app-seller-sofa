@@ -2,7 +2,9 @@ package com.example.app_sofa_frontend.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class ProductResponse {
+import java.io.Serializable;
+
+public class ProductResponse implements Serializable {
 
     @SerializedName("name_sofa")
     private String name_sofa;
@@ -44,8 +46,5 @@ public class ProductResponse {
     public void setImg_url(String img_url) {
         this.img_url = img_url;
     }
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> 372d115d5cba1794995ebe97f17c3deff7620b28
