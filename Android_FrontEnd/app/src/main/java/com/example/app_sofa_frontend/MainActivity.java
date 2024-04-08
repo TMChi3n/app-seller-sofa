@@ -63,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, LoginActivity.class));
             }
         });
+
+        // setOnEditorActionListener use action from to console
         search.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -79,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void fetchProducts() {
         Call<List<ProductResponse>> call = apiInterface.getAllProducts();
+        // enqueue use send the request and notify callback of its response
         call.enqueue(new Callback<List<ProductResponse>>() {
             @Override
             public void onResponse(Call<List<ProductResponse>> call, Response<List<ProductResponse>> response) {
@@ -105,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<List<ProductResponse>>() {
             @Override
             public void onResponse(Call<List<ProductResponse>> call, Response<List<ProductResponse>> response) {
-                if (response.isSuccessful()) {
+                if (response.isSuccessful()) {  // if success, get data product from to update and response RecyclerView equal Adapter
                     List<ProductResponse> products = response.body();
                     if (products != null && !products.isEmpty()) {
                         productList.clear();

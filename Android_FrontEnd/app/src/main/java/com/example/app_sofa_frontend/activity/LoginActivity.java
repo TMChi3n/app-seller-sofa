@@ -55,6 +55,8 @@ public class LoginActivity extends AppCompatActivity {
 
                 // Call login API
                 Call<UserAccount> call = api_login.loginAccount(userAccount);
+
+                // ca.enqueue send request and response notify call of response
                 call.enqueue(new Callback<UserAccount>() {
                     @Override
                     public void onResponse(Call<UserAccount> call, Response<UserAccount> response) {

@@ -32,12 +32,15 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         this.productList = productList;
     }
 
+    // Display an item in the list
+    // Create ViewHolder new equal inflate an layout XML file and return ViewHolder this
     @NonNull
     @Override
     public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_product, parent, false);
         return new ProductViewHolder(view);
     }
+
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
         ProductResponse product = productList.get(position);
@@ -56,12 +59,16 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         return productList.size();
     }
 
+    // ViewHolder represent for RecyclerView
+    // RecyclerView is ListView and GridView
     class ProductViewHolder extends RecyclerView.ViewHolder {
         private TextView productName;
         private TextView productPrice;
 
         private ImageView imgProduct;
 
+        // init constructor
+        // represent ViewHolder and init listener event when user click
         public ProductViewHolder(@NonNull View itemView) {
             super(itemView);
             productName = itemView.findViewById(R.id.txtProductName);
@@ -82,6 +89,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             });
         }
 
+        // assign data of products to element in presentation used in ViewHolder
         public void bind(ProductResponse product) {
             productName.setText(product.getName_sofa());
             String formattedPrice = String.format("%.2f VND", product.getPrice());

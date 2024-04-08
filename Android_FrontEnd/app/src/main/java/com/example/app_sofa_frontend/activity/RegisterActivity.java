@@ -97,7 +97,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<UserAccount> call, Throwable t) {
                 // Registration failed due to network error
-                Toast.makeText(RegisterActivity.this, "Lỗi kết nối. Vui lòng thử lại sau!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegisterActivity.this, "Connection failed. Try one more time, please!", Toast.LENGTH_SHORT).show();
             }
         });
     }
