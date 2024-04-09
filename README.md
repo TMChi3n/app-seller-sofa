@@ -11,6 +11,7 @@ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 Build CRUD Products
 Login and Register account (Not Spring Security)
 Search Product
+Dto: Data Access Object: The purpose of creating DTO is to reduce the amount of unnecessary information being transmitted, and also increase security. 
 
 # Android studio
 Use retrofit for call api from to Java Spring boot
@@ -33,4 +34,5 @@ Document https://github.com/bumptech/glide
 # React
 Use React for management Product and User account
 > npm install axios cors react react-dom react-router-dom nodemon
+
 
