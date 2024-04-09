@@ -68,9 +68,13 @@ public class MainActivity extends AppCompatActivity {
         search.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                    performSearch(v.getText().toString());
-                    return true;
+                if (actionId == EditorInfo.IME_ACTION_SEARCH ||
+                        (event != null && event.getAction() == KeyEvent.ACTION_DOWN && event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) {
+                    if (event == null || !event.isShiftPressed()) {
+                        // Trigger search when Enter is pressed without Shift key
+                        performSearch(v.getText().toString());
+                        return true;
+                    }
                 }
                 return false;
             }
