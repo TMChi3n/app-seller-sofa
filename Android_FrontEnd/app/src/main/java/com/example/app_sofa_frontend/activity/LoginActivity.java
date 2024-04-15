@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 // Validate input fields
                 if (username.isEmpty() || password.isEmpty()) {
-                    Toast.makeText(LoginActivity.this, "Please enter username and password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Vui lòng nhập đúng tên hoặc mật khẩu", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -62,14 +62,14 @@ public class LoginActivity extends AppCompatActivity {
                     public void onResponse(Call<UserAccount> call, Response<UserAccount> response) {
                         if (response.isSuccessful() && response.body() != null) {
                             // Login successful
-                            String message = "Login successful!";
+                            String message = "Đăng nhập thành công";
                             Toast.makeText(LoginActivity.this, message, Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(intent);
                             finish(); // Close LoginActivity after successful login
                         } else {
                             // Login failed
-                            String message = "Login failed. Please check your username and password.";
+                            String message = "Đăng nhập thất bại! Vui lòng kiểm tra và thử lại";
                             Toast.makeText(LoginActivity.this, message, Toast.LENGTH_SHORT).show();
                         }
                     }

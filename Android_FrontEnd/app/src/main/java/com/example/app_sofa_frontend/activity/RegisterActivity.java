@@ -66,7 +66,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         // Validate input fields
         if (username.isEmpty() || password.isEmpty() || email.isEmpty()) {
-            Toast.makeText(RegisterActivity.this, "Please enter username and password", Toast.LENGTH_SHORT).show();
+            Toast.makeText(RegisterActivity.this, "Vui lòng nhập tên, email, mật khẩu", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -82,14 +82,14 @@ public class RegisterActivity extends AppCompatActivity {
             public void onResponse(Call<UserAccount> call, Response<UserAccount> response) {
                 if (response.isSuccessful()) {
                     // Registration successful
-                    Toast.makeText(RegisterActivity.this, "Register successful!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, "Đăng ký thành công", Toast.LENGTH_SHORT).show();
                     // Redirect to login page
                     Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                     startActivity(intent);
                     finish(); // Optional: Finish the current activity to prevent going back to it using the back button
                 } else {
                     // Registration failed
-                    Toast.makeText(RegisterActivity.this, "Failed with register account!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, "Tài khoản đã được đăng ký", Toast.LENGTH_SHORT).show();
                 }
             }
 
