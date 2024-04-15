@@ -33,6 +33,7 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
+    private ImageView cartView;
     private ProductAdapter adapter;
     private List<ProductResponse> productList;
     private APIInterface apiInterface;
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         imgViewCart = findViewById(R.id.cart);
         recyclerView = findViewById(R.id.recyclerView);
         search = findViewById(R.id.search);
+        cartView = findViewById(R.id.cart);
 
         productList = new ArrayList<>();
         adapter = new ProductAdapter(this, productList);
@@ -56,6 +58,14 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         apiInterface = APIClient.getClient().create(APIInterface.class);
+
+        cartView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, CartActivity.class);
+                startActivity(intent);
+            }
+        });
 
         imgUser.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -122,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     } else {
                         // Handle case when no products are found
-                        Toast.makeText(MainActivity.this, "No products found", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Không tìm thấy sản phẩm", Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     // Handle an unsuccessful response
